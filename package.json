@@ -1,0 +1,22 @@
+{
+  "name": "ticket_booking_system",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": { 
+    "dev": "bun --watch index.ts",
+    "start": "bun run index.ts",
+    "clean": "rm -rf dist && echo 'Done.'",
+    "build": "bun build index.ts --outdir dist"
+  }, 
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/figlet": "^1.7.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "figlet": "^1.11.0"
+  }
+}
