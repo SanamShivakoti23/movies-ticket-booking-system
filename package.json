@@ -29,8 +29,12 @@
   },
   "dependencies": {
     "@sinclair/typebox": "^0.34.48",
+    "@types/pino": "^7.0.5",
     "elysia": "^1.4.28",
     "figlet": "^1.11.0",
-    "pg": "^8.20.0"
+    "logixlysia": "^6.2.2",
+    "pg": "^8.20.0",
+    "pino": "^10.3.1",
+    "pino-pretty": "^13.1.3"
   }
 }
