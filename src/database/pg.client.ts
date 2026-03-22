@@ -1,7 +1,8 @@
-import { Pool } from "pg";
+import { Pool, type PoolClient } from "pg";
+import { drizzle } from "drizzle-orm/node-postgres";
 
 const pool = new Pool({
-  host: "localhost",
+  host: "db",
   port: parseInt(process.env.POSTGRES_PORT ?? "5433"),
   database: "ticket_booking",
   user: "postgres",
@@ -12,17 +13,19 @@ const pool = new Pool({
   connectionTimeoutMillis: 5000,
 });
 
-export async function healtheCheck() {
-  const client = await pool.connect();
+// DRIZZLE INSTANCE
+export const db = drizzle(pool);
+
+export async function healthCheck(): Promise<boolean> {
   try {
-    await client.query("SELECT 1");
+    // simple drizzle query
+    const result = await db.execute("SELECT 1");
+
     console.log("Database health check passed");
     return true;
   } catch (error) {
-    console.error("Database health check failed: ", error);
+    console.error("health check failed:", error);
     return false;
-  } finally {
-    client.release();
   }
 }
 
