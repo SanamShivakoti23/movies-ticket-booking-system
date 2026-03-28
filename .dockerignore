@@ -1,0 +1,52 @@
+# Dependencies
+node_modules
+bun.lockb
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist
+build
+out
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+
+# IDE / Editor
+.vscode
+.idea
+
+
+# TypeScript cache
+*.tsbuildinfo
+
+
+# Tests / Docs
+coverage
+test
+tests
+*.md
+
+# Misc
+tmp
+temp
